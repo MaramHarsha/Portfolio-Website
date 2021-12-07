@@ -19,3 +19,7 @@ document.onkeydown = function (e) {
         return false;
     }
 };
+document.onselectstart = () => {
+event.preventDefault();
+alert('Warning Don't steal my content');
+};
