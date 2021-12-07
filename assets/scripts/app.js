@@ -19,7 +19,22 @@ document.onkeydown = function (e) {
         return false;
     }
 };
-document.onselectstart = () => {
-event.preventDefault();
-alert('Warning Don't steal my content');
-};
+
+
+<script type="text/JavaScript">
+
+function disableselect(e) {
+  return false
+}
+
+function reEnable() {
+  return true
+}
+
+document.onselectstart = new Function ("return false")
+
+if (window.sidebar) {
+  document.onmousedown = disableselect
+  document.onclick = reEnable
+}
+</script>
